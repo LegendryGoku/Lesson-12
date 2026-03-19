@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced CSS Positioning</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.7);
+        }
+
+        .container {
+            height: 2000px;
+            padding: 30px;
+        }
+
+        .box {
+            width: 220px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 30px;
+            transition: 0.4s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .box:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 25px rgba(255,255,255,0.7);
+        }
+
+        /* Static */
+        .static {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+        }
+
+        /* Relative */
+        .relative {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            position: relative;
+            left: 60px;
+            top: 20px;
+        }
+
+        /* Parent for Absolute */
+        .parent {
+            position: relative;
+            height: 300px;
+            border: 2px dashed white;
+            border-radius: 20px;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Absolute */
+        .absolute {
+            background: linear-gradient(to right, #00ff87, #60efff);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Sticky */
+        .sticky {
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+        }
+
+        /* Fixed */
+        .fixed {
+            background: linear-gradient(to right, #f7971e, #ffd200);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px #ffd200; }
+            50% { box-shadow: 0 0 25px #ffd200; }
+            100% { box-shadow: 0 0 10px #ffd200; }
+        }
+
+        p {
+            margin-top: 40px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>✨ CSS Positioning Effects ✨</h1>
+
+    <div class="container">
+
+        <div class="box static">Static</div>
+
+        <div class="box relative">Relative</div>
+
+        <div class="parent">
+            <div class="box absolute">Absolute</div>
+        </div>
+
+        <div class="box sticky">Sticky (Scroll!)</div>
+
+        <p>⬇ Scroll down to see Sticky & Fixed in action ⬇</p>
+
+        <div class="box fixed">Fixed</div>
+
+    </div>
+
+</body>
+</html>
